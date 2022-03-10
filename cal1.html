@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>javascript</title>
+</head>
+<body>
+<h2><u>Calculator</u></h2>
+<input id="field" type="text"></br></br>
+<button onclick="clicks(this)" id="1">1</button>
+<button onclick="clicks(this)" id="2">2</button>
+<button onclick="clicks(this)" id="3">3</button>
+<button onclick="clicks(this)" id="+">+</button></br></br>
+
+<button onclick="clicks(this)" id="4">4</button>
+<button onclick="clicks(this)" id="5">5</button>
+<button onclick="clicks(this)" id="6">6</button>
+<button onclick="clicks(this)" id="-">-</button></br></br>
+
+<button onclick="clicks(this)" id="7">7</button>
+<button onclick="clicks(this)" id="8">8</button>
+<button onclick="clicks(this)" id="9">9</button>
+<button onclick="clicks(this)" id="*">*</button></br></br>
+
+<button onclick="del()" id="X">X</button>
+<button onclick="clean()" id="AC">AC</button>
+<button onclick="ans()" id="=">=</button>
+<button onclick="clicks(this)" id="/">/</button></br></br>
+<script>
+	function clicks(btn){
+	var box = document.getElementById("field");
+	box.value+=btn.id;
+}
+function ans(){
+	var box = document.getElementById("field");
+	var expr = box.value;
+	var result = eval(expr);
+	box.value=result;
+}
+function clean(){
+	var box = document.getElementById("field");
+	box.value="";
+}
+function del(){
+	var box = document.getElementById("field");
+	var str = box.value;
+	box.value=str.slice(0,str.length-1);
+}
+</script>
+</body>
+</html>
